@@ -52,4 +52,26 @@ describe ('Component TripSummary', () => {
   it('throw error when missing props - days', () => {
     expect(() => shallow(<TripSummary id='test Id' image='test image' name='test name' cost='test cost' tags={[]} />)).toThrow();
   });
+
+  it('render tags in correct order', () => {
+    const expectedTags = [1, 2, 3];
+    const component = shallow(<TripSummary tags={expectedTags} id='test Id' image='test image' name='test name' cost='test cost' days={3} />);
+  
+    for (let n=0; n<=2; n++) {
+      expect(component.find('.tags span').at(n).text()).toEqual(String(expectedTags[n]));
+    }  
+  });
+
+  it('does not render tags div when tags is null', () => {
+    const component = shallow(<TripSummary id='test Id' image='test image' name='test name' cost='test cost' days={3} />);
+    expect(component.exists('.tags')).toBe(false);
+  });
+
+  it('does not render tags div when tags is empty', () => {
+    const component = shallow(<TripSummary tags={[]} id='test Id' image='test image' name='test name' cost='test cost' days={3} />);
+  
+    expect(component.exists('.tags')).toBe(false);
+  });
+
+
 });
