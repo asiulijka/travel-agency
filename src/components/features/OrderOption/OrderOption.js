@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './OrderOption.scss';
-// import {name} from '../../../data/pricing.json';
 import PropTypes from 'prop-types';
 import OrderOptionDropdown from './OrderOptionDropdown';
 import OrderOptionIcons from './OrderOptionIcons';
