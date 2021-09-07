@@ -5,7 +5,7 @@ import styles from './HappyHourAd.scss';
 class HappyHourAd extends React.Component {
   static propTypes = {
     title: PropTypes.string,
-    happyHour: PropTypes.string,
+    promoDescription: PropTypes.string,
   }
 
   constructor(){
@@ -25,7 +25,7 @@ class HappyHourAd extends React.Component {
   }
 
   render () {
-    const {title, happyHour} = this.props;
+    const {title, promoDescription} = this.props;
     const countdownTime = this.getCountdownTime();
     return (
       <div className={styles.component}>
@@ -33,7 +33,7 @@ class HappyHourAd extends React.Component {
           {title}
         </h3>
         <div className='promoDescription'>
-          {countdownTime > 23*60*60 ? happyHour : this.getCountdownTime()}
+          {countdownTime > 23*60*60 ? promoDescription : this.getCountdownTime()}
         </div>
       </div>
     );

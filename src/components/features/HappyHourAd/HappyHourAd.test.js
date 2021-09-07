@@ -10,7 +10,6 @@ const select = {
 const mockProps = {
   title: 'testTitle',
   promoDescription: 'testPromoDescription',
-  happyHour: 'testHappyHour',
 };
 
 describe('Component HappyHourAd', () => {
@@ -105,9 +104,9 @@ describe('Component HappyHourAd with mocked Date and delay', () => {
 // znajduje się w propsie promoDescription
 
 describe('Component HappyHourAd with mocked Date returns Promo information during promotion hour', () => {
-  checkDescriptionAtTime('12:00:00', mockProps.happyHour);
-  checkDescriptionAtTime('12:49:53', mockProps.happyHour);
-  checkDescriptionAtTime('12:59:59', mockProps.happyHour);
+  checkDescriptionAtTime('12:00:00', mockProps.promoDescription);
+  checkDescriptionAtTime('12:49:53', mockProps.promoDescription);
+  checkDescriptionAtTime('12:59:59', mockProps.promoDescription);
 });
 
 
@@ -116,6 +115,6 @@ describe('Component HappyHourAd with mocked Date returns Promo information durin
 // to czy zostanie wyświetlona informacja o promocji.
 
 describe('Component HappyHourAd with mocked Date and delay returns Promo information once counting gets to zero', () => {
-  checkDescriptionAfterTime('11:57:58', 123, mockProps.happyHour);
-  checkDescriptionAfterTime('11:59:58', 4, mockProps.happyHour);
+  checkDescriptionAfterTime('11:57:58', 123, mockProps.promoDescription);
+  checkDescriptionAfterTime('11:59:58', 4, mockProps.promoDescription);
 });
