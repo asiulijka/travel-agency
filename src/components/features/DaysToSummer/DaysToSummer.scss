@@ -6,15 +6,8 @@
   color: #fff;
 }
 
-.title, .promoDescription {
+.description {
   position: absolute;
   width: 100%;
-}
-
-.title {
-  bottom: 40px;
-}
-
-.promoDescription {
-  bottom: 10px;
+  top: 10px;
 }

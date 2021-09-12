@@ -52,7 +52,7 @@ const mockDate = customDate => class extends Date  {
     return this;
   }
   static now(){
-    return (new Date(customDate)).getTime();
+    return (new Date(customDate)).getDay();
   }
 };
 
